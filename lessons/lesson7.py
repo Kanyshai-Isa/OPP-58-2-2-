@@ -65,3 +65,10 @@ def update_user(row_id, name=None, age=None, hobby=None ):
 update_user("Arzybek", 2)
 update_user('45', 3)
 get_users()
+
+def delete_user(row_id):
+    cursor.execute(f'DELETE FROM users WHERE row_id = "{row_id}"')
+    connect.commit()
+    print('Пользователь удален!')
+
+delete_user(1)
